@@ -1,6 +1,15 @@
+.DS_Store
 log/**/*
 log
 tmp/**/*
 tmp
 config/database.yml
 db/schema.rb
+db/*.sqlite3
+public/assets/*
+config/3rd_party_apps.yml
+vendor/gems/nokogiri*
+scratch_directory
+TAGS
+public/cache
+*.swp

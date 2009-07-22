@@ -1,0 +1,41 @@
+!!! XML
+!!! 1.1
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en" }
+  %head
+    %title= yield(:page_title) || h(config[:title])
+    %base{ :href => "#{request.protocol}#{request.host_with_port}" }
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }
+    %meta{ :name => "author",       :content => "Jan Riethmayer" }
+    %meta{ :name => "copyright",    :content => cc_license }
+    %meta{ :name => "description",  :content => "optimiere! – Ruby on Rails Development aus Berlin." }
+    %link{ :rel => "stylesheet",  :type => "text/css", :href => "http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css" }
+    = stylesheet_link_tag 'compiled/default.css', :media => 'all'
+    = yield :head
+  %body
+    %div{ yui_style }
+      #container
+        #hd
+          = render :partial => "shared/header"
+          =flash_messages
+        #bd_wrapper
+          = yield :administrative
+          #bd
+            #yui-main
+              .yui-b
+                #content
+                  #main
+                    = yield :layout
+            .yui-b
+              - if (@sidebar = yield :sidebar)
+                #sidebar
+                  = @sidebar
+        #ft
+          #footer
+            #footer_content
+              = yield :footer
+              = render :partial => "shared/footer"
+
+    = javascript_include_tag :defaults, :cache => true
+    - javascript_tag do
+      = js_for_disqus_thread_link
+    = yield :js_bottom

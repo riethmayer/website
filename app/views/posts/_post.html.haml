@@ -1,0 +1,14 @@
+%h2= link_to(h(post.title), post_path(post))
+.entrybody
+  = post.body_html.untaint
+.meta
+  %ul
+    %li.date
+      Erstellt am
+      = format_post_date(post.published_at)
+    %li.comments
+      = link_to( "kommentiere", post_path(post, :anchor => 'disqus_thread'))
+    - unless post.tags.empty?
+      %li.tags
+        Tags:
+        = linked_tag_list(post.tags)

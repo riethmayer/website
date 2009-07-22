@@ -1,0 +1,18 @@
+- content_for(:page_title) do 
+  =h archives_title
+
+%h2  Archive
+- if @months.empty?
+  %p
+    Sobald es Posts gibt, werden diese hier archiviert
+- else
+  - @months.each do |month|
+    %h3
+      = format_month(month.date)
+    %ul.archive-month
+      - month.posts.each do |post|
+        %li
+          = link_to(post.title, post_path(post)) 
+          - unless post.tags.empty?
+            %span.tags
+              =" (#{ linked_tag_list(post.tags) })"

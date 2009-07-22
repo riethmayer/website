@@ -6,7 +6,6 @@ ActionController::Routing::Routes.draw do |map|
 
     admin.resources :posts, :new => {:preview => :post}
     admin.resources :pages, :new => {:preview => :post}
-    admin.resources :comments, :member => {:mark_as_spam => :put, :mark_as_ham => :put}
     admin.resources :tags
     admin.resources :undo_items, :member => {:undo => :post}
   end
@@ -22,9 +21,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :pages
 
-  map.connect ':year/:month/:day/:slug/comments', :controller => 'comments', :action => 'index'
-  map.connect ':year/:month/:day/:slug/comments/new', :controller => 'comments', :action => 'new'
-  map.connect ':year/:month/:day/:slug/comments.:format', :controller => 'comments', :action => 'index'
   map.connect ':year/:month/:day/:slug', :controller => 'posts', :action => 'show', :requirements => { :year => /\d+/ }
   map.posts_with_tag ':tag', :controller => 'posts', :action => 'index'
   map.formatted_posts_with_tag ':tag.:format', :controller => 'posts', :action => 'index'

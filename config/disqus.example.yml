@@ -1,0 +1,29 @@
+available_discussion_boards: &available_discussion_boards
+  my_api_key: yourapikeyhere
+  app_name: appname
+  container_id: disqus_thread
+  avatar_size: 48
+  color: grey
+  default_tab: popular
+  hide_avatars: false
+  hide_mods: true
+  num_items: 15
+  show_powered_by: true
+  orientation: horizontal
+  board:
+    id: a_board_id
+    shortname: something
+    name: bla
+    api_key: board_api_key
+
+development:
+  <<: *available_discussion_boards
+  development_mode: true
+
+test:
+  <<: *available_discussion_boards
+  development_mode: true
+
+production:
+  <<: *available_discussion_boards
+  development_mode: false

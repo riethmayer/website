@@ -1,0 +1,14 @@
+#header_content
+  =h yield(:title)
+  %h1
+    %a#optimiere{ :href => root_path }
+      %span
+        optimiere.com
+  #teaser
+    %h1 Wir bauen Webapps!
+
+  = render :partial => "shared/navigation"
+
+  #header
+    = yield :header
+  

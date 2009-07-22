@@ -1,0 +1,11 @@
+#disqus_thread
+  - if DISQUS_CONFIG['development_mode']
+    - content_for :head do
+      - javascript_tag do
+        var disqus_developer = true;
+      
+  - content_for :js_bottom do
+    = javascript_include_tag "http://disqus.com/forums/#{DISQUS_CONFIG['app_name']}/embed.js"
+  %noscript
+    %a{ :href => "http://#{DISQUS_CONFIG['app_name']}.disqus.com/?url=ref"} 
+      Betrachte den Diskussionsverlauf.

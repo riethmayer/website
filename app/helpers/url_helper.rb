@@ -26,20 +26,8 @@ module UrlHelper
     path.untaint
   end
 
-  def post_comments_path(post)
-    post_path(post) + "/comments"
-  end
-
   def page_path(page)
     "/pages/#{page.slug}"
-  end
-
-  def author_link(comment)
-    if comment.author_url.blank?
-      h(comment.author)
-    else
-      link_to(h(comment.author), h(comment.author_url), :class => 'openid')
-    end
   end
 
   def posts_atom_path(tag)

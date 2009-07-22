@@ -1,0 +1,51 @@
+@import general/colors.sass
+#flash_notice, #flash_error, #flash_warning
+  :padding 5px 8px
+  :text-align left
+  :-moz-border-radius 5px
+
+#flash_notice
+  :background-color = !flash_notice_background_color
+  +thin_border
+  :border-color     = !flash_notice_border_color
+  :color            = !flash_notice_color
+  
+#flash_warning
+  :background-color = !flash_warning_background_color
+  +thin_border
+  :border-color     = !flash_warning_border_color
+  :color            = !flash_warning_color
+
+#flash_error
+  :background-color = !flash_error_background_color
+  +thin_border
+  :border-color     = !flash_error_border_color
+  :color            = !flash_error_color
+  
+.fieldWithErrors
+  :display inline
+
+#errorExplanation
+  :width 400px
+  +thin_border
+  :border-color     = !flash_error_border_color
+  :padding 3px
+  :padding-bottom 12px
+  :margin-bottom 20px
+  :background-color = !flash_error_background_color
+  :color            = !flash_error_color
+
+  h2
+    :font-weight bold
+    :padding 5px 5px 5px 15px
+    :font-size 12px
+    :margin 0
+  p
+    :margin-bottom 0
+    :padding 8px
+
+  ul
+    :margin 2px 24px
+    li
+      :font-size 12px
+      :list-style disc

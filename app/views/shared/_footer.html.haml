@@ -1,0 +1,19 @@
+.yui-gd
+  .yui-u.first
+    %h3
+      optimiere.com
+  .yui-u
+    %p
+      Danke für Ihren Besuch.
+- unless category_links_for_navigation.empty?
+  #categories
+    .yui-gd
+      .yui-u.first
+        %h3
+          kategorien
+      .yui-u
+        %p
+          = category_links_for_navigation.map { |link| "#{link_to(h(link.name.upcase), link.url)}"}.join(", ")
+
+= render :partial => 'shared/twitter'
+= render :partial => 'shared/copyright'

@@ -1,0 +1,134 @@
+@import colors.sass
+@import borders.sass
+=list_margins
+  :margin 1em
+  :margin-left 2em
+
+html
+  :background-color = !body_background_color
+
+body
+  :font-family "Lucida Grande",Helvetica,Arial,Verdana,sans-serif
+  :color = !standard_foreground_color
+  :background-color = !body_background_color
+
+h1
+  :font-size 197%
+
+h2
+  :font-size 167%
+
+h3
+  :font-size 123.1%
+
+p
+  :font-size 85%
+  :line-height 1.2
+  :margin-bottom 1em
+
+h1, h2, h3, h4, h5, h6, strong, .more
+  :font-weight bold
+  :margin-bottom 1ex
+
+a
+  :color = !a_foreground_color
+  :text-decoration none
+  :background-color = !a_background_color
+  :display inline-block
+  :padding 2px
+  
+  &:hover
+    :text-decoration underline
+  &:focus
+    :color = !a_focus_foreground_color
+    :background-color = !a_focus_background_color
+
+input, button, textarea
+  :font-size 123.1%
+  :padding 3px
+  
+th, td
+  :vertical-align top
+
+abbr, acronym
+  :cursor help
+  
+blockquote
+  :margin 1em
+  
+ul
+  +list_margins
+
+  li
+    :line-height 1.5
+    :margin-bottom 0.5ex
+
+ol
+  +list_margins
+  li
+  
+dl
+  +list_margins
+  
+  dd
+    :margin-left 1em
+
+caption
+  :margin-bottom .5em
+  
+pre, code, kbd, samp, tt 
+  :font-family monospace
+  :font-size 123.1%
+  :line-heigt 1.3
+
+a, button, a *, button *
+  :cursor pointer
+  
+.centered
+  :text-align center
+
+// Hides from IE-mac
+* html .clear
+  :height 1%
+
+.clear
+  :display block
+  :clear both
+  
+  &:after
+    :content "."
+    :display block
+    :height 0
+    :clear both
+    :visibility hidden
+
+#container
+  :padding 1em
+#sidebar
+  :padding 1em
+
+div#teaser
+  :font-weight bold
+  :padding-right 3em
+
+abbr
+  +thin_bottom_border
+
+
+#offers, #imprint, .sidebar p
+  :line-height 1.5
+
+
+img#jan_picture
+  :margin 1em 0 
+  :text-align center
+
+
+div#ft
+  span.networks
+    :display block
+    :float left
+    :width 100px
+
+  li
+    :margin 3px 0

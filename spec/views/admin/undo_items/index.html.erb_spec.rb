@@ -7,8 +7,8 @@ describe "/admin/undo_items/index.html.erb" do
 
   it 'should render' do
     assigns[:undo_items] = [mock_model(UndoItem,
-      :created_at  => Time.now,
-      :description => 'Deleted a comment'
+      :description => 'You did something evil',
+      :created_at  => Time.now
     )]
     render '/admin/undo_items/index.html.erb'
   end

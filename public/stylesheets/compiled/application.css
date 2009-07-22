@@ -1,0 +1,27 @@
+/* line 1, ../../../app/stylesheets/application.sass */
+body {
+  background-color: #4B7399;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px; }
+
+/* line 7, ../../../app/stylesheets/application.sass */
+a {
+  color: #0000FF; }
+  /* line 10, ../../../app/stylesheets/application.sass */
+  a img {
+    border: none; }
+
+/* line 14, ../../../app/stylesheets/application.sass */
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden; }
+
+/* line 20, ../../../app/stylesheets/application.sass */
+#container {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px; }

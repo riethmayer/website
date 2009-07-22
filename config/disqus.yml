@@ -1,0 +1,34 @@
+available_discussion_boards: &available_discussion_boards
+  my_api_key: txwQEYQzHpBaBpupEXNGhmXht82MOdjFr6xT1CgcEyXy4SR6G1NbgRXeWhTZfEjn
+  app_name: optimiere
+  container_id: disqus_thread
+  avatar_size: 48
+  color: grey
+  default_tab: popular
+  hide_avatars: false
+  hide_mods: true
+  num_items: 15
+  show_powered_by: true
+  orientation: horizontal
+  board:
+    id: 151669
+    shortname: optimiere
+    name: optimiere.com
+    api_key: Y6bswlR0Y8oALTILbh7ZEQQhUJ8YR3ZAtuMHg6GTYPAvCiZkrBFZu4Wdk9GONsq4
+    # riethmayer:
+    #   id: 151667
+    #   shortname: riethmayer
+    #   name: Jan Riethmayer
+    #   api_key: Oi1zOgqEu5ZIly6MFia35jbyekQdwfrYPmelsxWzntiRrKfzJGnlbJhNk153wWAb
+
+development:
+  <<: *available_discussion_boards
+  development_mode: true
+
+test:
+  <<: *available_discussion_boards
+  development_mode: true
+
+production:
+  <<: *available_discussion_boards
+  development_mode: false

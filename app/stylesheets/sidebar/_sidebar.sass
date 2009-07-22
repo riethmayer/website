@@ -1,0 +1,31 @@
+#sidebar
+  :background-color = !sidebar_background_color
+  :-moz-border-radius 5px
+  +medium_border
+  :color = !sidebar_foreground_color
+  :padding 1em
+  :margin 0.5em
+  ul
+    :margin 0
+    :padding 1em
+    +thin_right_border
+    li
+      :text-align right
+      :font-size 138.5%
+      +thin_bottom_border
+      
+      a
+        :background-color transparent
+        
+        &:hover
+          :background-color = !meta_background_color
+          :color            = !meta_foreground_color
+
+      &.active
+        +medium_bottom_border
+  ol
+    li
+      :text-align right
+  
+  dl
+    dd

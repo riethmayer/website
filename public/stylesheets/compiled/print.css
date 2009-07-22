@@ -1,0 +1,114 @@
+/* line 1, ../../../app/stylesheets/print.sass */
+body {
+  color: #000;
+  background-color: #fff;
+  margin: 40px; }
+
+/* line 7, ../../../app/stylesheets/print.sass */
+h1#logo, #nav {
+  display: none; }
+
+/* line 12, ../../../app/stylesheets/print.sass */
+p#footer, p#foot {
+  font-size: 75%;
+  line-height: 1.72em; }
+
+/* line 17, ../../../app/stylesheets/print.sass */
+a {
+  color: #9c1010;
+  text-decoration: underline; }
+
+/* line 22, ../../../app/stylesheets/print.sass */
+h1#grabber {
+  font: bold 150% Helvetica, Arial, sans-serif; }
+
+/* line 26, ../../../app/stylesheets/print.sass */
+h2#statement {
+  font-size: 112.5%;
+  line-height: 1.72em;
+  padding: 40px 0 60px 0; }
+  /* line 31, ../../../app/stylesheets/print.sass */
+  h2#statement a {
+    color: #cecece;
+    text-decoration: underline; }
+
+/* line 36, ../../../app/stylesheets/print.sass */
+#about h1, #approach h1, #interview h1.title, #work h1.title, #vision h1.title {
+  font-size: 112.5%;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-bottom: 20px;
+  padding-top: 40px;
+  border-top: 2px solid #000; }
+
+/* line 45, ../../../app/stylesheets/print.sass */
+#about h1.title, #approach h1.title, #interview h1.title, #work h1.title, #vision h1.title {
+  padding-top: 0;
+  border-top: none; }
+
+/* line 50, ../../../app/stylesheets/print.sass */
+#about p, #approach p, #interview p, #work p, #vision p {
+  font-size: 87.5%;
+  line-height: 1.62em;
+  padding-bottom: 25px; }
+
+/* line 56, ../../../app/stylesheets/print.sass */
+#about .vcard {
+  font-size: 75%;
+  padding-bottom: 45px; }
+  /* line 60, ../../../app/stylesheets/print.sass */
+  #about .vcard div {
+    padding-bottom: 3px; }
+  /* line 63, ../../../app/stylesheets/print.sass */
+  #about .vcard span.type, #about .vcard .country-name, #about .vcard .url {
+    display: none; }
+
+/* line 69, ../../../app/stylesheets/print.sass */
+#work #sidebar p, #work #sidebar ul {
+  display: none; }
+/* line 72, ../../../app/stylesheets/print.sass */
+#work #screenshot #hidden-screens {
+  display: none; }
+
+/* line 76, ../../../app/stylesheets/print.sass */
+#about ul, #approach ul, #work ul {
+  padding-bottom: 37px; }
+
+/* line 80, ../../../app/stylesheets/print.sass */
+#about .col li, #approach li, #interview li, #work li {
+  font-size: 75%;
+  padding-bottom: 8px;
+  list-style-type: square;
+  list-style-position: inside; }
+
+/* line 88, ../../../app/stylesheets/print.sass */
+#interview ol {
+  padding: 10px 0 30px; }
+/* line 91, ../../../app/stylesheets/print.sass */
+#interview li {
+  font-size: 87.5%;
+  line-height: 1.52em;
+  margin-left: 50px;
+  padding-bottom: 8px;
+  list-style-type: decimal-leading-zero;
+  list-style-position: outside; }
+/* line 99, ../../../app/stylesheets/print.sass */
+#interview #compatible p {
+  padding-bottom: 100px; }
+
+/* line 103, ../../../app/stylesheets/print.sass */
+#vision form {
+  display: none; }
+
+/* line 108, ../../../app/stylesheets/print.sass */
+#work #screenshot {
+  padding-bottom: 40px; }
+/* line 111, ../../../app/stylesheets/print.sass */
+#work h2.project-name {
+  font-size: 87.5%;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  padding-bottom: 20px; }
+/* line 117, ../../../app/stylesheets/print.sass */
+#work #case p.link {
+  padding-bottom: 8px; }

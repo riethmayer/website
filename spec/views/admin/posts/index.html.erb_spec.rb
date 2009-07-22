@@ -10,8 +10,7 @@ describe "/admin/posts/index.html.erb" do
       :published_at      => Time.now,
       :title             => 'A post',
       :body              => 'Hello I am a post',
-      :slug              => 'a-post',
-      :approved_comments => []
+      :slug              => 'a-post'
     )]
     posts.stub!(:total_pages).and_return(1)
     assigns[:posts] = posts

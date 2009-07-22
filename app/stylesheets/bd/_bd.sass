@@ -1,0 +1,33 @@
+#bd_wrapper
+  #bd
+    :background-color = !container_background_color
+    :margin 0 1em
+    +medium_border
+  #content
+    :padding 1em
+    a
+    ul
+      li
+        :list-style square outside
+      
+    ol
+      li
+        :list-style decimal outside
+    dl
+      dd
+.post
+  .meta
+    +thin_border
+    :background-color = !meta_background_color
+    :color = !meta_foreground_color
+    :-moz-border-radius 5px
+    :margin-bottom 2em
+    :padding 0 5px
+    a
+      :background-color = !meta_background_color
+    ul
+      :margin 0
+      li
+        :display inline
+        :margin 0 1em 0 0
+        :padding 2px

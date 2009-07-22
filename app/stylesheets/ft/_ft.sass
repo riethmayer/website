@@ -1,0 +1,47 @@
+#ft
+  :background-color = !meta_background_color
+  :margin 0 1em
+  :padding 1em
+  :color = !meta_foreground_color
+  :-moz-border-radius-bottomleft 5px
+  :-moz-border-radius-bottomright 5px
+  .first
+    :text-align right
+  p
+    :line-height 2.1
+    
+  a
+    :background-color = !a_footer_background_color
+    :color = !a_footer_foreground_color
+    :padding 0 0.5em
+    
+    &:hover
+      :background-color = !a_footer_hover_background_color
+      :color =            !a_footer_hover_foreground_color
+    
+    &.license
+      &:hover
+        :background-color transparent
+      :margin 0
+      img
+        :margin-bottom -3px
+      
+  .tweet
+    :clear both
+    a.tweet-image
+      :background-color transparent
+      :float left
+    
+  a.image
+    :padding 0
+    :margin-right 1em
+    :float left
+    &:hover
+      :background-color transparent
+    img
+      :margin-bottom -3px
+      
+  a.facebook
+    :padding 2px 0 0 20px
+    :height 16px  
+    :background transparent url(/assets/images/facebook_40.gif) no-repeat top left

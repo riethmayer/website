@@ -1,0 +1,15 @@
+yui_specifics: &yui_specifics
+  width: doc3
+  sidebar: yui-t7
+
+development:
+  <<: *yui_specifics
+  development_mode: true
+
+test:
+  <<: *yui_specifics
+  development_mode: true
+
+production:
+  <<: *yui_specifics
+  development_mode: false

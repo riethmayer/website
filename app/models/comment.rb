@@ -1,92 +1,105 @@
-class Comment < ActiveRecord::Base
-  DEFAULT_LIMIT = 15
+# Comment is no association no more, it's an included service now.
+require 'httparty'
+class DisqusError < StandardError 
+end
 
-  attr_accessor         :openid_error
-  attr_accessor         :openid_valid
+class Comment
+  include HTTParty
+  base_uri 'disqus.com'
+  format :json
+  default_params :forum_api_key => DISQUS_CONFIG['board']['api_key'], :user_api_key => DISQUS_CONFIG['my_api_key'], :api_version => "1.1"
 
-  belongs_to            :post
-
-  before_save           :apply_filter
-  after_save            :denormalize
-  after_destroy         :denormalize
-
-  validates_presence_of :author, :body, :post
-
-  # validate :open_id_thing
-  def validate
-    super 
-    errors.add(:base, openid_error) unless openid_error.blank?
+  # Creates a new post on the thread. Does not check against spam filters or ban list.
+  # This is intended to allow automated importing of comments.
+  #
+  # @param thread_id    the thread to post to
+  # @param message      content of the post
+  # @param author_name  post author
+  # @param author_email post author email
+  # @param created_at   defaults to current time UTC
+  # @param parent_post  
+  # @param author_url   authors homepage
+  # @param forum_id     authors ip-address
+  # @param user_api_key 
+  def create_post(opts={})
+    conf = DISQUS_CONFIG['board']
+    raise_unless_succeeded self.class.post("/api/create_post", :query => { 
+      :thread_id    => opts[:thread_id],
+      :message      => opts[:message],
+      :author_name  => opts[:author_name],
+      :author_email => opts[:author_email],
+      :created_at   => opts[:created_at], # %Y-%m-%dT%H:%M, current time is default,
+      :parent_post  => opts[:parent_post],
+      :author_url   => opts[:ip_address],
+      :forum_id     => opts[:forum_id] || DISQUS_CONFIG['board']['id']
+    })
   end
 
-  def apply_filter
-    self.body_html = Lesstile.format_as_xhtml(self.body, :code_formatter => Lesstile::CodeRayFormatter)
+  # A list of objects representing all forums the user owns.
+  def get_forum_list
+    raise_unless_succeeded self.class.get("/api/get_forum_list")
+  end
+
+  # A string which is the Forum Key for the given forum. 
+  def get_forum_api_key 
+    raise_unless_succeeded self.class.get("/api/get_forum_api_key", :query => { 
+      :forum_id  => DISQUS_CONFIG['board']['id']
+    })
+  end
+
+  # list of objects representing all threads belonging to the given forum
+  def get_thread_list
+    raise_unless_succeeded self.class.get("/api/get_thread_list")
   end
   
-  def blank_openid_fields
-    self.author_url = ""
-    self.author_email = ""
+  # An object mapping each thread_id to a list of two numbers. 
+  # The first number is the number of visible comments on on the thread; 
+  #    this would be useful for showing users of the site (e.g., "5 Comments"). 
+  # The second number is the total number of comments on the thread. 
+  #    These numbers are different because some forums require moderator approval, 
+  #    some messages are flagged as spam, etc.
+  def get_num_posts
+    raise_unless_succeeded thread_ids = (get_thread_list)['message'].map {|e| e['id']}.join(',')
+    self.class.get("/api/get_num_posts", :query => {
+      :thread_ids    => thread_ids
+    })
   end
-
-  def requires_openid_authentication?
-    !!self.author.index(".")
+  
+  # A thread object if one was found, otherwise null. 
+  # Only finds threads associated with the given forum.
+  def get_thread_by_url(url)
+    raise_unless_succeeded self.class.get("/api/get_thread_by_url", :query => {
+      :url    => url
+    })
   end
-
-  def trusted_user?
-    false
+  
+  # A list of objects representing all posts belonging to the given forum
+  def get_thread_posts(thread_id)
+    raise_unless_succeeded self.class.get("/api/get_thread_posts", :query => {
+      :thread_id => thread_id
+    })
   end
-
-  def user_logged_in?
-    false
+  
+  # Create or retrieve a thread by an arbitrary identifying string of your choice. 
+  # For example, you could use your local database's ID for the thread. This method
+  #   allows you to decouple thread identifiers from the URLs on which they might 
+  #   be appear. If no thread yet exists for the given identifier 
+  #  (paired with the forum), one will be created.
+  def thread_by_identifier(title, identifier)
+    raise_unless_succeeded self.class.post("/api/thread_by_identifier", :query => {
+      :title => title, 
+      :identifier => identifier,
+      :forum_api_key => DISQUS_CONFIG['board']['api_key']
+    })
   end
-
-  def approved?
-    true
-  end
- 
-  def denormalize
-    self.post.denormalize_comments_count!
-  end
-
-  def destroy_with_undo
-    undo_item = nil
-    transaction do
-      self.destroy
-      undo_item = DeleteCommentUndo.create_undo(self)
-    end
-    undo_item
-  end
-
-  # Delegates
-  def post_title
-    post.title
-  end
-
-  class << self
-    def protected_attribute?(attribute)
-      [:author, :body].include?(attribute.to_sym)
-    end
-    
-    def new_with_filter(params)
-      comment = Comment.new(params)
-      comment.created_at = Time.now
-      comment.apply_filter
-      comment
-    end
-
-    def build_for_preview(params)
-      comment = Comment.new_with_filter(params)
-      if comment.requires_openid_authentication?
-        comment.author_url = comment.author
-        comment.author     = "Your OpenID Name"
-      end
-      comment
-    end
-
-    def find_recent(options = {})
-      find(:all, {
-        :limit => DEFAULT_LIMIT,
-        :order => 'created_at DESC'
-      }.merge(options))
-    end
+  
+  # small helper to help us figuring out what's up if something goes the shit
+  def raise_unless_succeeded(answer)
+    raise ArgumentError, "message and code must not be blank!" if answer['message'].blank? && answer['code'].blank?
+    message   = answer['message']
+    succeeded = answer['succeeded']
+    code      = answer['code']
+    raise DisqusError, "message: #{message}, code: #{code}" unless succeeded
+    message
   end
 end

@@ -1,0 +1,41 @@
+= header_navigation
+  #navigation
+    :-moz-border-radius-topleft 5px
+    :-moz-border-radius-topright 5px
+    :background transparent url(/assets/images/navigation.png) repeat-x scroll left center
+    +medium_border
+    :clear both
+    :height 44px
+    :margin-top 0.5ex
+  
+    ul
+      :margin 0
+      li
+        :margin 0
+        :padding 0
+        &.active
+        p
+          :color = !meta_foreground_color
+          :float right
+          :font-family "Myriad Pro","Helvetica Neue","Lucida Grande",Helvetica,FreeSans,"Nimbus Sans L",Arial,Verdana,sans-serif
+          :font-weight bold
+          :padding 0 1em
+          :font-size 123.1%
+          :margin 0
+          +medium_left_border
+          :border-color = #000
+          :line-height 1.5
+        a
+          :margin 0
+          :padding 0
+          :background-color transparent
+          :color = !a_foreground_color
+          &:hover
+            :text-decoration none
+            :color = !a_hover_foreground_color
+        span
+          :color = !meta_foreground_color
+          :font-size 77%
+          :display block
+          :font-weight normal
+          :text-shadow 1px 1px 0 #000000

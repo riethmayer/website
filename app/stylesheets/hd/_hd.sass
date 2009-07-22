@@ -1,0 +1,18 @@
+@import general/colors.sass
+@import general/borders.sass
+@import hd/search.sass
+@import hd/logo.sass
+@import hd/navigation.sass
+#hd
+  :border-color = !meta_background_color
+  +header_logo
+  +header_navigation
+  +search_form
+#teaser
+  :float right
+  :background transparent url(/assets/images/teaser.png) no-repeat right bottom
+  :height 44px
+  :width 336px
+  :padding 2px
+  h1
+    :display none
