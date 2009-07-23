@@ -1,0 +1,81 @@
+#container
+  #dsq-combo-widget
+    :text-align left
+
+    #dsq-combo-content
+      :position static
+
+      h3
+        :float none
+        :text-indent 0
+        :background none
+        :padding 0
+        :border 0
+        :margin 0 0 10px 0
+        :font-size 123.1%
+
+    #dsq-combo-tabs li
+      :display inline
+      :float left
+      :margin-right 2px
+      :padding 0px 5px
+      :text-transform uppercase
+
+      a
+        :text-decoration none
+        :font-weight bold
+        :font-size inherit
+
+    #dsq-combo-content
+      .dsq-combo-box
+        :margin 0 0 20px
+        :padding 12px
+        :clear both
+        :-moz-border-radius-bottomleft 5px
+        :-moz-border-radius-bottomright 5px
+        :-moz-border-radius-topright 5px
+
+        li
+          :padding-bottom 10px
+          :margin-bottom 10px
+          :overflow hidden
+          :word-wrap break-word
+
+      .dsq-combo-avatar
+        :float left
+        :height 48px
+        :width 48px
+        :margin-right 15px
+
+      .dsq-combo-box cite
+        :font-weight bold
+        :font-size 100%
+
+
+  span.dsq-widget-clout
+    :background-color #933
+    :color #FFFFFF
+    :padding 0pt 2px
+
+
+  #dsq-combo-logo
+    :text-align right
+
+
+  #dsq-combo-widget
+    :color #fff
+
+    &.grey
+      #dsq-combo-tabs li.dsq-active, #dsq-combo-content .dsq-combo-box
+        :background #222
+
+      #dsq-combo-tabs li
+        :background #ddd
+        &#dsq-combo-tab-popular
+          :-moz-border-radius-topright 5px
+        &#dsq-combo-tab-people
+          :-moz-border-radius-topleft 5px
+        
+
+      #dsq-combo-content .dsq-combo-box li
+        :border-bottom 1px dotted #ccc

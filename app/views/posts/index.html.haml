@@ -3,12 +3,19 @@
 - content_for(:head) do 
   = auto_discovery_link_tag(:atom, formatted_posts_path(:tag => @tag, :format => 'atom'))
 
-- if @posts.empty?
-  %p Momentan gibts noch keine Posts.
-- else
-  - @posts.each do |post|
-    %div{ :class => "post post-#{ post.id }" }
-      = render :partial => 'post', :locals => {:post => post }
-  - if more_content?
-    .related
-      = link_to_related_archive
+.yui-gc
+  .yui-u.first
+    - if @posts.empty?
+      %p Momentan gibts noch keine Posts.
+    - else
+      - @posts.each do |post|
+        %div{ :class => "post post-#{ post.id }" }
+          = render :partial => 'post', :locals => {:post => post }
+      - if more_content?
+        .related
+          = link_to_related_archive
+  .yui-u
+    = javascript_include_tag "http://disqus.com/forums/optimiere/combination_widget.js?num_items=5&color=grey&default_tab=recent"
+
+
+  
