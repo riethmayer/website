@@ -6,5 +6,11 @@
   <%= form.input :title %>
   <%= form.input :description %>
   <%= form.input :slug, :hint => "Leave blank for an auto-generated slug based on the title." %>
+
   <%= form.input :body, :hint => "<a href='http://hobix.com/textile/quick.html'>Textile enabled</a>. Use Ctrl+E to switch between preview and edit mode." %>
+  <%= form.input :sidebar %>
+
+  <%= form.label :sidebar_class, "Sidebar Stil:" %>
+  <br />
+  <%= yui_sidebar_styles %>
 <% end -%>

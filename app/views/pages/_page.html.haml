@@ -1,1 +1,4 @@
 = @page.body_html.untaint
+
+- content_for :sidebar do
+  = @page.sidebar.untaint

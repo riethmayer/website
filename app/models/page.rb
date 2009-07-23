@@ -11,6 +11,16 @@ class Page < ActiveRecord::Base
       page.apply_filter
       page
     end
+    
+    def legal_sidebar_classes
+      [ ["left:small"   , "yui-t1"],
+        ["left:medium"  , "yui-t2"],
+        ["left:large"   , "yui-t3"],
+        ["right:small"  , "yui-t4"],
+        ["right:medium" , "yui-t5"],
+        ["right:large"  , "yui-t6"],
+        ["none"         , "yui-t7"]  ]
+    end
   end
 
   def apply_filter
