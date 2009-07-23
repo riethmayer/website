@@ -1,6 +1,6 @@
 #navigation
   %ul
     - page_links_for_navigation.each do |link|
-      %li{ :class => "#{'active' if false && current_page?(page_path(link))}" }
+      %li{ :class => "page #{'active' if current_page?(page_path(link))}" }
         %p
           = link_to("#{h(link.name)} <span>#{h(link.description)}</span>", link.url)

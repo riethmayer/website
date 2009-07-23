@@ -27,7 +27,8 @@ module UrlHelper
   end
 
   def page_path(page)
-    "/pages/#{page.slug}"
+    return "/pages/#{page.slug}" if page.is_a? Page
+    "#{page.url}"
   end
 
   def posts_atom_path(tag)
