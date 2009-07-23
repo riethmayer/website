@@ -6,6 +6,3 @@
       
   - content_for :js_bottom do
     = javascript_include_tag "http://disqus.com/forums/#{DISQUS_CONFIG['app_name']}/embed.js"
-  %noscript
-    %a{ :href => "http://#{DISQUS_CONFIG['app_name']}.disqus.com/?url=ref"} 
-      Betrachte den Diskussionsverlauf.
