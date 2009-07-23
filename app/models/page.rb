@@ -25,6 +25,7 @@ class Page < ActiveRecord::Base
 
   def apply_filter
     self.body_html = EnkiFormatter.format_as_xhtml(self.body)
+    self.sidebar   = EnkiFormatter.format_as_xhtml(self.sidebar)
   end
 
   def active?
