@@ -1,4 +1,4 @@
-set :application, "optimiereapp"
+set :application, "riethmayer.de"
 role :app, application
 role :web, application
 role :db,  application, :primary => true
