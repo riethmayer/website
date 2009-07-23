@@ -511,7 +511,13 @@ a.twitter {
       text-decoration: none;
       font-weight: bold;
       font-size: inherit; }
-  /* line 30, ../../../app/stylesheets/disqus/_combo_widget.sass */
+      /* line 29, ../../../app/stylesheets/disqus/_combo_widget.sass */
+      #container #dsq-combo-widget #dsq-combo-tabs li a:hover {
+        color: #222; }
+    /* line 33, ../../../app/stylesheets/disqus/_combo_widget.sass */
+    #container #dsq-combo-widget #dsq-combo-tabs li.dsq-active a:hover {
+      color: #fff; }
+  /* line 37, ../../../app/stylesheets/disqus/_combo_widget.sass */
   #container #dsq-combo-widget #dsq-combo-content .dsq-combo-box {
     margin: 0 0 20px;
     padding: 12px;
@@ -519,45 +525,45 @@ a.twitter {
     -moz-border-radius-bottomleft: 5px;
     -moz-border-radius-bottomright: 5px;
     -moz-border-radius-topright: 5px; }
-    /* line 38, ../../../app/stylesheets/disqus/_combo_widget.sass */
+    /* line 45, ../../../app/stylesheets/disqus/_combo_widget.sass */
     #container #dsq-combo-widget #dsq-combo-content .dsq-combo-box li {
       padding-bottom: 10px;
       margin-bottom: 10px;
       overflow: hidden;
       word-wrap: break-word; }
-  /* line 44, ../../../app/stylesheets/disqus/_combo_widget.sass */
+  /* line 51, ../../../app/stylesheets/disqus/_combo_widget.sass */
   #container #dsq-combo-widget #dsq-combo-content .dsq-combo-avatar {
     float: left;
     height: 48px;
     width: 48px;
     margin-right: 15px; }
-  /* line 50, ../../../app/stylesheets/disqus/_combo_widget.sass */
+  /* line 57, ../../../app/stylesheets/disqus/_combo_widget.sass */
   #container #dsq-combo-widget #dsq-combo-content .dsq-combo-box cite {
     font-weight: bold;
     font-size: 100%; }
-/* line 55, ../../../app/stylesheets/disqus/_combo_widget.sass */
+/* line 62, ../../../app/stylesheets/disqus/_combo_widget.sass */
 #container span.dsq-widget-clout {
   background-color: #933;
   color: #FFFFFF;
   padding: 0pt 2px; }
-/* line 61, ../../../app/stylesheets/disqus/_combo_widget.sass */
+/* line 68, ../../../app/stylesheets/disqus/_combo_widget.sass */
 #container #dsq-combo-logo {
   text-align: right; }
-/* line 65, ../../../app/stylesheets/disqus/_combo_widget.sass */
+/* line 72, ../../../app/stylesheets/disqus/_combo_widget.sass */
 #container #dsq-combo-widget {
   color: #fff; }
-  /* line 69, ../../../app/stylesheets/disqus/_combo_widget.sass */
+  /* line 76, ../../../app/stylesheets/disqus/_combo_widget.sass */
   #container #dsq-combo-widget.grey #dsq-combo-tabs li.dsq-active, #container #dsq-combo-widget.grey #dsq-combo-content .dsq-combo-box {
     background: #222; }
-  /* line 72, ../../../app/stylesheets/disqus/_combo_widget.sass */
+  /* line 79, ../../../app/stylesheets/disqus/_combo_widget.sass */
   #container #dsq-combo-widget.grey #dsq-combo-tabs li {
     background: #ddd; }
-    /* line 74, ../../../app/stylesheets/disqus/_combo_widget.sass */
+    /* line 81, ../../../app/stylesheets/disqus/_combo_widget.sass */
     #container #dsq-combo-widget.grey #dsq-combo-tabs li#dsq-combo-tab-popular {
       -moz-border-radius-topright: 5px; }
-    /* line 76, ../../../app/stylesheets/disqus/_combo_widget.sass */
+    /* line 83, ../../../app/stylesheets/disqus/_combo_widget.sass */
     #container #dsq-combo-widget.grey #dsq-combo-tabs li#dsq-combo-tab-people {
       -moz-border-radius-topleft: 5px; }
-  /* line 80, ../../../app/stylesheets/disqus/_combo_widget.sass */
+  /* line 87, ../../../app/stylesheets/disqus/_combo_widget.sass */
   #container #dsq-combo-widget.grey #dsq-combo-content .dsq-combo-box li {
     border-bottom: 1px dotted #ccc; }
