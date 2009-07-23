@@ -25,6 +25,10 @@
     :padding 0 5px
     a
       :background-color = !meta_background_color
+      :color = !a_foreground_color
+      &:hover 
+        :background-color = !a_foreground_color
+        :color = !meta_foreground_color
     ul
       :margin 0
       li
