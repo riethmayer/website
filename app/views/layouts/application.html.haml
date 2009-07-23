@@ -39,3 +39,7 @@
     - javascript_tag do
       = js_for_disqus_thread_link
     = yield :js_bottom
+    - javascript_tag do
+      = google_analytics_first
+    - javascript_tag do
+      = google_analytics_last
