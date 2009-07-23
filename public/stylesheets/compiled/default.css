@@ -176,16 +176,17 @@ a.twitter {
     /* line 5, ../../../app/stylesheets/hd/_logo.sass */
     #hd #header_content h1 {
       font-size: 1%;
-      float: left; }
-      /* line 8, ../../../app/stylesheets/hd/_logo.sass */
+      float: left;
+      margin-bottom: 0; }
+      /* line 9, ../../../app/stylesheets/hd/_logo.sass */
       #hd #header_content h1 a {
         background: transparent url(/assets/images/logo.png) no-repeat scroll left 0;
         width: 500px;
-        height: 44px; }
-        /* line 13, ../../../app/stylesheets/hd/_logo.sass */
+        height: 62px; }
+        /* line 14, ../../../app/stylesheets/hd/_logo.sass */
         #hd #header_content h1 a:hover {
           background: transparent url(/assets/images/logo.png) no-repeat scroll 0 -66px; }
-      /* line 16, ../../../app/stylesheets/hd/_logo.sass */
+      /* line 17, ../../../app/stylesheets/hd/_logo.sass */
       #hd #header_content h1 span {
         display: none; }
   /* line 2, ../../../app/stylesheets/hd/_navigation.sass */

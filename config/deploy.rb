@@ -9,7 +9,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, "git"
-set :repository,  "git@github.com:riethmayer/website.git"
+set :repository,  "git://github.com/riethmayer/website.git"
 set :branch, "master"
 
 namespace :deploy do

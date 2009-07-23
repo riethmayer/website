@@ -1,5 +1,5 @@
 class Page < ActiveRecord::Base
-  validates_presence_of :title, :slug, :body
+  validates_presence_of :title, :slug, :body, :description
 
   before_validation     :generate_slug
 
