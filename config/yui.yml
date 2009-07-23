@@ -1,6 +1,6 @@
 yui_specifics: &yui_specifics
   width: doc3
-  sidebar: yui-t7
+  sidebar: yui-t6
 
 development:
   <<: *yui_specifics

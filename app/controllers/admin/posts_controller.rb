@@ -60,7 +60,7 @@ class Admin::PostsController < Admin::BaseController
 
     respond_to do |format|
       format.js {
-        render :partial => 'posts/post.html.erb'
+        render :partial => 'posts/post.html.haml'
       }
     end
   end
