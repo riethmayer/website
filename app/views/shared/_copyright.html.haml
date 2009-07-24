@@ -17,12 +17,6 @@
       = link_to "Jan Riethmayer", "http://www.xing.com/profile/jan_riethmayer" 
       Mindener Str. 20 &ndash; 10589 Berlin, Deutschland.
     %p
-      Valides
-      %a{ :href => "http://validator.w3.org/check?uri=referer" }
-        XHTML
-      und 
-      = link_to "ATOM", "http://feedvalidator.org/check.cgi?url=#{h(config[:url])}/posts.atom"
-    %p
       %a{:href => "http://creativecommons.org/licenses/GPL/3.0/", :title => "Diese Software fällt unter den Lizenzvertrag CC-GNU GPL der Version 3.0 oder höher.", :class => 'image' }
         = image_tag("http://creativecommons.org/images/public/cc-GPL-a.png", :alt => "CC-GNU GPL")
       Geforked von
