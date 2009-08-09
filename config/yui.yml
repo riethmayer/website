@@ -1,5 +1,5 @@
 yui_specifics: &yui_specifics
-  width: doc3
+  width: doc2
   sidebar: yui-t7
 
 development:
