@@ -11,6 +11,8 @@
 !fat_border_style = "solid"
 !fat_border_width = 1em
 
+!rounded_corners_size = 0.5em
+
 // border definitions
 // thin border
 = thin_bottom_border
@@ -117,3 +119,19 @@
   :border-width = !fat_border_width 
   :border-color = !standard_border_color  
 
+= rounded_corners
+  :-moz-border-radius = !rounded_corners_size
+  :-webkit-border-radius = !rounded_corners_size
+  :border-radius 5px = !rounded_corners_size
+
+= rounded_corners_top
+  :-moz-border-radius-topleft       = !rounded_corners_size
+  :-moz-border-radius-topright      = !rounded_corners_size
+  :-webkit-border-top-left-radius   = !rounded_corners_size
+  :-webkit-border-top-right-radius  = !rounded_corners_size
+
+= rounded_corners_bottom
+  :-moz-border-radius-bottomleft       = !rounded_corners_size
+  :-moz-border-radius-bottomright      = !rounded_corners_size
+  :-webkit-border-bottom-left-radius   = !rounded_corners_size
+  :-webkit-border-bottom-right-radius  = !rounded_corners_size

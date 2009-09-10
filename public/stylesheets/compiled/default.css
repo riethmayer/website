@@ -197,8 +197,10 @@ a.twitter {
         display: none; }
   /* line 2, ../../../app/stylesheets/hd/_navigation.sass */
   #hd #navigation {
-    -moz-border-radius-topleft: 5px;
-    -moz-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 0.5em;
+    -moz-border-radius-topright: 0.5em;
+    -webkit-border-top-left-radius: 0.5em;
+    -webkit-border-top-right-radius: 0.5em;
     background: transparent url(/assets/images/navigation.png) repeat-x scroll left center;
     border-style: solid;
     border-width: 1px;
@@ -206,14 +208,14 @@ a.twitter {
     clear: both;
     height: 44px;
     margin-top: 0.5ex; }
-    /* line 11, ../../../app/stylesheets/hd/_navigation.sass */
+    /* line 10, ../../../app/stylesheets/hd/_navigation.sass */
     #hd #navigation ul {
       margin: 0; }
-      /* line 13, ../../../app/stylesheets/hd/_navigation.sass */
+      /* line 12, ../../../app/stylesheets/hd/_navigation.sass */
       #hd #navigation ul li {
         margin: 0;
         padding: 0; }
-        /* line 17, ../../../app/stylesheets/hd/_navigation.sass */
+        /* line 16, ../../../app/stylesheets/hd/_navigation.sass */
         #hd #navigation ul li p {
           color: white;
           float: right;
@@ -227,17 +229,17 @@ a.twitter {
           border-left-color: #222222;
           border-color: black;
           line-height: 1.5; }
-        /* line 28, ../../../app/stylesheets/hd/_navigation.sass */
+        /* line 27, ../../../app/stylesheets/hd/_navigation.sass */
         #hd #navigation ul li a {
           margin: 0;
           padding: 0;
           background-color: transparent;
           color: #993333; }
-          /* line 33, ../../../app/stylesheets/hd/_navigation.sass */
+          /* line 32, ../../../app/stylesheets/hd/_navigation.sass */
           #hd #navigation ul li a:hover {
             text-decoration: none;
             color: white; }
-        /* line 36, ../../../app/stylesheets/hd/_navigation.sass */
+        /* line 35, ../../../app/stylesheets/hd/_navigation.sass */
         #hd #navigation ul li span {
           color: white;
           font-size: 77%;
@@ -313,51 +315,53 @@ a.twitter {
   margin: 0 1em;
   padding: 1em;
   color: white;
-  -moz-border-radius-bottomleft: 5px;
-  -moz-border-radius-bottomright: 5px; }
-  /* line 8, ../../../app/stylesheets/ft/_ft.sass */
+  -moz-border-radius-bottomleft: 0.5em;
+  -moz-border-radius-bottomright: 0.5em;
+  -webkit-border-bottom-left-radius: 0.5em;
+  -webkit-border-bottom-right-radius: 0.5em; }
+  /* line 7, ../../../app/stylesheets/ft/_ft.sass */
   #ft .first {
     text-align: right; }
-  /* line 10, ../../../app/stylesheets/ft/_ft.sass */
+  /* line 9, ../../../app/stylesheets/ft/_ft.sass */
   #ft p {
     line-height: 2.1; }
-  /* line 13, ../../../app/stylesheets/ft/_ft.sass */
+  /* line 12, ../../../app/stylesheets/ft/_ft.sass */
   #ft a {
     background-color: #222222;
     color: #993333;
     padding: 0 0.5em; }
-    /* line 18, ../../../app/stylesheets/ft/_ft.sass */
+    /* line 17, ../../../app/stylesheets/ft/_ft.sass */
     #ft a:hover {
       background-color: #993333;
       color: white; }
-    /* line 22, ../../../app/stylesheets/ft/_ft.sass */
+    /* line 21, ../../../app/stylesheets/ft/_ft.sass */
     #ft a.license {
       margin: 0; }
-      /* line 23, ../../../app/stylesheets/ft/_ft.sass */
+      /* line 22, ../../../app/stylesheets/ft/_ft.sass */
       #ft a.license:hover {
         background-color: transparent; }
-      /* line 26, ../../../app/stylesheets/ft/_ft.sass */
+      /* line 25, ../../../app/stylesheets/ft/_ft.sass */
       #ft a.license img {
         margin-bottom: -3px; }
-  /* line 29, ../../../app/stylesheets/ft/_ft.sass */
+  /* line 28, ../../../app/stylesheets/ft/_ft.sass */
   #ft .tweet {
     clear: both; }
-    /* line 31, ../../../app/stylesheets/ft/_ft.sass */
+    /* line 30, ../../../app/stylesheets/ft/_ft.sass */
     #ft .tweet a.tweet-image {
       background-color: transparent;
       float: left; }
-  /* line 35, ../../../app/stylesheets/ft/_ft.sass */
+  /* line 34, ../../../app/stylesheets/ft/_ft.sass */
   #ft a.image {
     padding: 0;
     margin-right: 1em;
     float: left; }
-    /* line 39, ../../../app/stylesheets/ft/_ft.sass */
+    /* line 38, ../../../app/stylesheets/ft/_ft.sass */
     #ft a.image:hover {
       background-color: transparent; }
-    /* line 41, ../../../app/stylesheets/ft/_ft.sass */
+    /* line 40, ../../../app/stylesheets/ft/_ft.sass */
     #ft a.image img {
       margin-bottom: -3px; }
-  /* line 44, ../../../app/stylesheets/ft/_ft.sass */
+  /* line 43, ../../../app/stylesheets/ft/_ft.sass */
   #ft a.facebook {
     padding: 2px 0 0 20px;
     height: 16px;
@@ -367,39 +371,41 @@ a.twitter {
 #sidebar {
   background-color: #222222;
   -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   border-style: solid;
   border-width: 1px;
   border-color: #222222;
   color: white;
   padding: 1em;
   margin: 1em; }
-  /* line 8, ../../../app/stylesheets/sidebar/_sidebar.sass */
+  /* line 11, ../../../app/stylesheets/sidebar/_sidebar.sass */
   #sidebar ul {
     margin: 0;
     padding: 1em;
     border-right-style: dotted;
     border-right-width: 1px;
     border-right-color: #222222; }
-    /* line 12, ../../../app/stylesheets/sidebar/_sidebar.sass */
+    /* line 15, ../../../app/stylesheets/sidebar/_sidebar.sass */
     #sidebar ul li {
       text-align: right;
       font-size: 138.5%;
       border-bottom-style: dotted;
       border-bottom-width: 1px;
       border-bottom-color: #222222; }
-      /* line 17, ../../../app/stylesheets/sidebar/_sidebar.sass */
+      /* line 20, ../../../app/stylesheets/sidebar/_sidebar.sass */
       #sidebar ul li a {
         background-color: transparent; }
-        /* line 20, ../../../app/stylesheets/sidebar/_sidebar.sass */
+        /* line 23, ../../../app/stylesheets/sidebar/_sidebar.sass */
         #sidebar ul li a:hover {
           background-color: #222222;
           color: white; }
-      /* line 24, ../../../app/stylesheets/sidebar/_sidebar.sass */
+      /* line 27, ../../../app/stylesheets/sidebar/_sidebar.sass */
       #sidebar ul li.active {
         border-bottom-style: solid;
         border-bottom-width: 1px;
         border-bottom-color: #222222; }
-  /* line 27, ../../../app/stylesheets/sidebar/_sidebar.sass */
+  /* line 30, ../../../app/stylesheets/sidebar/_sidebar.sass */
   #sidebar ol li {
     text-align: right; }
 
